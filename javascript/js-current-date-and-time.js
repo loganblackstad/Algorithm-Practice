@@ -39,7 +39,11 @@ function printDateTime() {
 
 
 
-  console.log("Current Time is:")
+  // console.log(`Current Time is: ${dateObj.getHours()}:${dateObj.getMinutes()}`);
+  console.log(`Current Time is: ${dateObj.toLocaleTimeString("default", { hour: '2-digit', minute: '2-digit' })}`)
+
+  // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  // toLocaleString("default", {}))
 
 
 
