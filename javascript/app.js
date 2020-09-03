@@ -9,7 +9,14 @@ const http = require('http');
 // Create an instance of the http server to handle HTTP requests
 let app = http.createServer((req, res) => {
   // Set a response type of plain text for the response
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.writeHead(201, { 'Content-Type': 'text/plain' });
+
+  // Informational responses(100–199),
+  // Successful responses(200–299),
+  // Redirects(300–399),
+  // Client errors(400–499),
+  // and Server errors(500–599).
+
 
   // Send back a response and end the connection
   res.end('Hello World!\n');
