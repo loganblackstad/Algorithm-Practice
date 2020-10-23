@@ -6,7 +6,7 @@
 
 var fs = require("fs");
 const readline = require('readline');
-var text = fs.readFileSync("./bowl2.txt", "utf-8");
+var text = fs.readFileSync("./bowl4.txt", "utf-8");
 var textByLine = text.split("\n");
 
 var n = parseInt(textByLine[0], 10);
@@ -39,10 +39,10 @@ for (i = 0; i < n; i++) {
 
   if (n - i > 1) {
     // strike
-    if (rolls[i] === 10 && (n - i > 2 && ((isNaN(rolls[i + 2]) ? 0 : rolls[i + 2]) !== 10))) {
+    if (rolls[i] === 10 && (n - i > 2)) {
       console.log('strike')
       frameArr.push(10);
-      scoreArr.push(10 + rolls[i + 1] + (isNaN(rolls[i + 2]) ? 0 : rolls[i + 2]));
+      scoreArr.push(10 + rolls[i + 1] + rolls[i + 2]);
       scoreArr2.push(scoreArr2[scoreArr2.length - 1] + 10 + rolls[i + 1] + (isNaN(rolls[i + 2]) ? 0 : rolls[i + 2]));
       frames += 1;
     }
@@ -57,9 +57,9 @@ for (i = 0; i < n; i++) {
       i++;
     }
 
-    // base
-    else {
-      console.log('base')
+    // not strike or spare
+    else if (rolls[i] !== 10) {
+      console.log('not strike/spare')
       frameArr.push((rolls[i] + rolls[i + 1]));
       scoreArr.push((rolls[i] + rolls[i + 1]))
       scoreArr2.push(scoreArr2[scoreArr2.length - 1] + (rolls[i] + rolls[i + 1]));
