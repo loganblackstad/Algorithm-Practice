@@ -32,18 +32,56 @@ def to_string(n, base):
         return to_string(n // base, base) + convert_string[n % base]
 
 
-print(to_string(2835, 16))
+# print(to_string(2835, 16))
 
 
 # 3. Write a Python program of recursion list sum. Go to the editor
 # Test Data: [1, 2, [3,4], [5,6]]
 # Expected Result: 21
 
+lst1 = [1, 2, [3, 4], [5, 6]]
+
+
+def recursion_list_sum(lst):
+    the_sum = 0
+    for i in lst:
+        if isinstance(i, (list)):
+            the_sum += recursion_list_sum(i)
+        else:
+            the_sum += i
+    return the_sum
+
+
+# print(recursion_list_sum(lst1))
+
 
 # 4. Write a Python program to get the factorial of a non-negative integer. Go to the editor
+def factorial(n):
+    if n <= 1:
+        return 1
+    else:
+        return n * (factorial(n - 1))
+
+
+# print(factorial(5))
 
 
 # 5. Write a Python program to solve the Fibonacci sequence using recursion. Go to the editor
+
+def fibonacci(n):
+  
+  if n == 1 or n==2:
+    
+
+
+  # 1
+  # 1
+  # 1+1 = 2
+  # 1+2 = 3
+  # 2+3 = 5
+  # 3+5 = 8
+  # 5+8 = 13
+
 
 
 # 6. Write a Python program to get the sum of a non-negative integer. Go to the editor
