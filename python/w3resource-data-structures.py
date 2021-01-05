@@ -68,20 +68,24 @@ def factorial(n):
 
 # 5. Write a Python program to solve the Fibonacci sequence using recursion. Go to the editor
 
+
 def fibonacci(n):
-  
-  if n == 1 or n==2:
-    
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
 
-  # 1
-  # 1
-  # 1+1 = 2
-  # 1+2 = 3
-  # 2+3 = 5
-  # 3+5 = 8
-  # 5+8 = 13
+# print(fibonacci(7))
 
+# 0
+# 1
+# 1
+# 1+1 = 2
+# 1+2 = 3
+# 2+3 = 5
+# 3+5 = 8
+# 5+8 = 13
 
 
 # 6. Write a Python program to get the sum of a non-negative integer. Go to the editor
@@ -90,10 +94,23 @@ def fibonacci(n):
 # sumDigits(45) -> 9
 
 
+def sum_non_negative(x):
+    return sum(list(map(lambda ch: int(ch), str(x))))
+
+
+# print(sum_non_negative(345))
+
 # 7. Write a Python program to calculate the sum of the positive integers of n+(n-2)+(n-4)... (until n-x =< 0). Go to the editor
 # Test Data:
 # sum_series(6) -> 12
 # sum_series(10) -> 30
+
+
+def calc_positive_ints(x):
+    return x + (calc_positive_ints(x - 2) if (x - 2) >= 0 else 0)
+
+
+print(calc_positive_ints(10))
 
 
 # 8. Write a Python program to calculate the harmonic sum of n-1. Go to the editor
