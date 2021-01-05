@@ -110,7 +110,7 @@ def calc_positive_ints(x):
     return x + (calc_positive_ints(x - 2) if (x - 2) >= 0 else 0)
 
 
-print(calc_positive_ints(10))
+# print(calc_positive_ints(10))
 
 
 # 8. Write a Python program to calculate the harmonic sum of n-1. Go to the editor
@@ -119,10 +119,26 @@ print(calc_positive_ints(10))
 # harmonic series
 
 
+def harmonic_sum(x):
+    return 1 / x + (harmonic_sum(x - 1) if x > 2 else 1)
+
+
+# print(harmonic_sum(7))
+# print(harmonic_sum(4))
+
 # 9. Write a Python program to calculate the geometric sum of n-1. Go to the editor
 # Note: In mathematics, a geometric series is a series with a constant ratio between successive terms.
 # Example :
 # harmonic series
+
+
+def geometric_sum(x):
+    print(x)
+    return (1 / 2 ** x) + (geometric_sum(x - 1) if x > 1 else 1)
+
+
+# print(geometric_sum(7))
+# print(geometric_sum(4))
 
 
 # 10. Write a Python program to calculate the value of 'a' to the power 'b'. Go to the editor
@@ -130,5 +146,31 @@ print(calc_positive_ints(10))
 # (power(3,4) -> 81
 
 
+def the_power(base, exp):
+    return base * (the_power(base, exp - 1) if exp - 1 > 1 else base)
+
+
+# print(the_power(3, 4))
+
 # 11. Write a Python program to find  the greatest common divisor (gcd) of two integers. Go to the editor
+
+
+def gcd(a, b):
+
+    # Use tuple for selecting an item
+    # (if_test_false,if_test_true)[test]
+    low = (b, a)[a < b]
+    # Use Dictionary for selecting an item
+    # ({True: a, False: b} [a < b])
+    high = {True: a, False: b}[a > b]
+
+    if low == 0:
+        return high
+    elif low == 1:
+        return 1
+    else:
+        return gcd(low, high % low)
+
+
+print(gcd(12, 42))
 
