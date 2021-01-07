@@ -131,6 +131,18 @@ def group_string(list_of_strings, condition_parameter):
 
 
 
+def group_string_2(list_of_strings, condition_parameter):
+    cases = {
+        "first_letter": group_by_first_letter,
+        "length": group_by_length,
+        "anagram": palindrome,
+    }
+    if condition_parameter in cases.keys()
+        return cases[operator](x, y)
+    else:
+        print("Invalid Search Criteria. Please choose a valid Search Criteria:/n, (lambda a: print(a\n), cases.keys())")
+
+    return condition_parameter(list_of_strings)
 
 
 
