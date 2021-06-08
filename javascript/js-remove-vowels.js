@@ -12,7 +12,18 @@
 // 
 
 function removeVowels(str1) {
-    return str1[0];
+     return str1.replace(/[aeiou]/gi, '');
+    // g is for global; i is for insensitive
+
+    /* 
+    // similarly, if you had an array of strings, use the .map() function 
+    // with the same regex
+    
+    var strings = ["bongo drums", "guitar", "flute", "double bass", "xylophone","piano"];                          
+
+    return strings.map(x=>x.replace( /[aeiou]/g, '' ));
+    */
+
 }
   
 
